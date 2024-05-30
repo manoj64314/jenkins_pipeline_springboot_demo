@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     tools {
-      maven 'maven3'
+      maven 'maven_binary'
     }
     
     environment {
@@ -15,7 +15,7 @@ pipeline {
     stages{
         stage ('Checkout') {
             steps{
-                checkout poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vcjain/jenkins_pipeline_springboot_demo.git']])
+                checkout poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/manoj64314/jenkins_pipeline_springboot_demo.git']])
             }
             
         }
