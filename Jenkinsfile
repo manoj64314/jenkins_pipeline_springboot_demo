@@ -39,6 +39,7 @@ pipeline {
                 echo "Test Stage is in progress"
                 sh 'mvn install'
                 archiveArtifacts artifacts: 'target/calculator-0.0.1-SNAPSHOT.jar', followSymlinks: false
+                junit stdioRetention: '', testResults: '**/target/surefire-reports/*.xml'
             }
         }
         stage('NotifyByEmail'){
